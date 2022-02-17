@@ -1,0 +1,17 @@
+{
+  "name": "zoom-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "automate.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^10.0.0",
+    "prompt-sync": "^4.2.0",
+    "puppeteer": "^13.3.1"
+  }
+}
