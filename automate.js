@@ -4,6 +4,7 @@ const prompt = require("prompt-sync")();
 const zoom = require("./modules/zoom");
 const mail = require("./modules/mail");
 const { generateRandomUser, saveFile } = require("./modules/util");
+const { windowSize, windowPosition } = require("./config/config");
 
 const automate = async (browser) => {
   await mail.init(browser);
@@ -31,12 +32,18 @@ const automate = async (browser) => {
   `;
   await saveFile(zoomData);
   await zoom.close();
-  console.log("Account Created Successfully!")
+  console.log("Account Created Successfully!");
 };
 
 (async () => {
   var input = parseInt(prompt("How many account do you want: "));
-  const browser = await puppeteer.launch({ headless: false, args: ["--window-size=500,500", "--window-position=-1000,-1000"] }); 
+  const browser = await puppeteer.launch({
+    headless: false,
+    args: [
+      `--window-size=${windowSize.width},${windowSize.height}`,
+      `--window-position=${windowPosition.x},${windowPosition.y}`,
+    ],
+  });
   for (let i = 0; i < input; i++) await automate(browser);
-  browser.close()
+  browser.close();
 })();
