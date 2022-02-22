@@ -36,7 +36,7 @@ const automate = async (browser) => {
 };
 
 (async () => {
-  var input = parseInt(prompt("How many account do you want: "));
+  var input = parseInt(prompt("How many accounts do you want: "));
   const browser = await puppeteer.launch({
     headless: false,
     args: [
