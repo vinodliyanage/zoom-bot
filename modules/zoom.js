@@ -44,38 +44,23 @@ const Zoom = {
     });
     await this.page.waitForSelector("#password-form");
 
-    await this.page.$eval(
-      "#password-form #firstName",
-      (input, first_name) => {
-        input.value = first_name;
-        input.dispatchEvent(new Event("input"));
-      },
-      first_name
-    );
-    await this.page.$eval(
-      "#password-form #lastName",
-      (input, last_name) => {
-        input.value = last_name;
-        input.dispatchEvent(new Event("input"));
-      },
-      last_name
-    );
-    await this.page.$eval(
-      "#password-form #password",
-      (input, password) => {
-        input.value = password;
-        input.dispatchEvent(new Event("input"));
-      },
-      password
-    );
-    await this.page.$eval(
-      "#password-form #confirm_password",
-      (input, password) => {
-        input.value = password;
-        input.dispatchEvent(new Event("input"));
-      },
-      password
-    );
+    const formData = {
+      "#password-form #firstName": first_name,
+      "#password-form #lastName": last_name,
+      "#password-form #password": password,
+      "#password-form #confirm_password": password
+    }
+
+    for(let selector in formData) {
+      await this.page.$eval(
+        selector,
+        (input, data) => {
+          input.value = data
+          input.dispatchEvent(new Event("input"));
+        },
+        formData[selector]
+      );
+    }
 
     await this.page.click("#password-form button");
     await this.page.waitForNavigation({
