@@ -1,7 +1,7 @@
 {
   "name": "zoom-bot",
   "version": "1.0.0",
-  "description": "GeGenerate Random Zoom Accounts, Unlimited Free Meetings!",
+  "description": "Generate Random Zoom Accounts, Unlimited Free Meetings!",
   "main": "automate.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
