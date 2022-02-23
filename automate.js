@@ -40,6 +40,8 @@ const automate = async (browser) => {
   });
   await zoom.close();
 
+  logger.log(logger.FgGreen, "Account created successfully!", "+");
+  
   const zoomData = `
   email: ${email}
   password: ${password}
@@ -49,7 +51,6 @@ const automate = async (browser) => {
   `;
   await saveFile(zoomData);
 
-  logger.log(logger.FgGreen, "Account created successfully!", "+");
   logger.log(logger.FgCyan, zoomData);
 };
 
