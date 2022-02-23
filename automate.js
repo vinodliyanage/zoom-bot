@@ -1,3 +1,11 @@
+/***********************************************************************
+  
+                https://github.com/vinodliyanage/zoom-bot
+  -------------------------------- (C) ---------------------------------
+                           Author: Vinod Liyanage
+                    
+************************************************************************/
+
 const puppeteer = require("puppeteer");
 const prompt = require("prompt-sync")();
 
