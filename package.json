@@ -1,13 +1,15 @@
 {
   "name": "zoom-bot",
   "version": "1.0.0",
-  "description": "",
+  "description": "GeGenerate Random Zoom Accounts, Unlimited Free Meetings!",
   "main": "automate.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "zoom"
+  ],
+  "author": "Vinod Liyanage",
   "license": "ISC",
   "dependencies": {
     "fs-extra": "^10.0.0",
